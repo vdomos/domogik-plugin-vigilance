@@ -77,6 +77,37 @@ Cas couleur "Vague-Submersion" > couleur "département"
 
 A voir si un départemnet10 peut avoir d'autre risque que le '9' (Vague Submersion) ?
  
+Vigilance orange département 62:
+NXFR33_LFPW_.xml
+----------------
+<DV dep="62" coul="3">
+    <risque val="2"/>
+</DV>
+<DV dep="62" coul="2">
+    <risque val="1"/>
+    <risque val="4"/>
+    <risque val="3"/>
+</DV>
+<DV dep="6210" coul="2">
+    <risque val="9"/>
+</DV>
+
+NXFR34_LFPW_.xml
+----------------
+<datavigilance couleur="3" dep="62">
+    <risque valeur="2"/>
+    <crue valeur="2"/>
+</datavigilance>
+<datavigilance couleur="2" dep="6210"/>
+
+
+http://vigilance.meteofrance.com/data/WXQQ62_LFPW_.xml
+------------------------------------------------------
+...
+<Datevigilance>Emis le : vendredi 18 novembre 2016 à  10h56 </Datevigilance>
+...
+
+
 """
 
 import traceback
@@ -123,11 +154,11 @@ class Vigilance:
         """
         while not self._stop.isSet():
             self.log.debug(u"==> Get weather vigilance for '%s' 'departement'" % (self.dep))
-            info, color, risk = self.getvigilance(self.dep)
+            info, colors, risk = self.getvigilance(self.dep)
             
-            if color != "error":
-                self.log.info(u"==> Vigilance for 'departement' '%s' : '%s' (risk = '%s')" % (self.dep, color, risk))
-                self._send(self.device_id, color, risk, info)
+            if colors != "error":
+                self.log.info(u"==> Vigilance for 'departement' '%s' : '%s' (risk = '%s')" % (self.dep, colors, risk))
+                self._send(self.device_id, self.dep, colors, risk, info)
             else:
                 self.log.warning(u"### Error getting vigilance for 'departement' '%s'" % self.dep)
                 
@@ -139,14 +170,14 @@ class Vigilance:
         Inspired from GuiguiAbloc'code: http://api.domogeek.fr
         '''
         url = 'http://vigilance.meteofrance.com/data/NXFR33_LFPW_.xml'      # 'http://vigilance.meteofrance.com/data/NXFR34_LFPW_.xml'
-        risklong = ["No vigilance", "Wind", "Rain", "Thunderstorms", "Flood", "Snow/ice", "Heat wave", "Intense cold", "Avalanches", "Submersion wave"]
+        risklong = ["", "Wind", "Rain", "Thunderstorms", "Flood", "Snow/ice", "Heat wave", "Intense cold", "Avalanches", "Submersion wave"]
         colorlist = ["E0E0D1", "28D661", "FFFF00", "FFC400", "FF0000"]      # ["grey", "green", "yellow", "orange", "red"]
 
         if deprequest == "92" or deprequest == "93" or deprequest == "94": deprequest = "75"
         if deprequest == "20": deprequest = "2A"
         try:
-            #xmldata = urllib2.urlopen(url)
-            xmldata = "/var/lib/domogik/domogik_packages/plugin_vigilance/docs/tests//NXFR33_LFPW_.xml"    # wget -q "http://vigilance.meteofrance.com/data/NXFR33_LFPW_.xml"
+            xmldata = urllib2.urlopen(url)
+            #xmldata = "/var/lib/domogik/domogik_packages/plugin_vigilance/docs/tests//NXFR33_LFPW_.xml"
             dom = minidom.parse(xmldata)
         except HTTPError, err:
             self.log.error(u"API GET '%s', HTTPError code: %d" % (url, err.code))
@@ -158,40 +189,34 @@ class Vigilance:
             self.log.error(u"API GET '%s', Unknown error: '%s'" % (url, (traceback.format_exc())))
             return "error", "", ""
         else:
-            risks = ""
-            colornumber = ""
-            colornumber10 = "1"
+            vigiColor = ""
+            vigiColors = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]     # Contient couleur pour chaque risque, vigiColors[0]  = couleur global (max), vigiColors[1] = "2" ==> Vigilance "Vent" = couleur Jaune
+            vigiRisks = ["", "No vigilance,", "", "", ""]                       # Contient risques texte pour chaque couleur et seul le risque de la couleur max sera affiché
             
             for ev in dom.getElementsByTagName('EV'):
                 dateinsert = ev.attributes['dateinsert'].value
-                vigiInfo = datetime.strptime(dateinsert, "%Y%m%d%H%M%S").strftime("%d/%m/%Y %H:%M:%S")
+                #vigiInfo = datetime.strptime(dateinsert, "%Y%m%d%H%M%S").strftime("%d/%m/%Y %H:%M:%S")
+                vigiInfo = dateinsert
             
             for dv in dom.getElementsByTagName('DV'):
                 departement = dv.attributes['dep'].value
-                if departement == deprequest:
-                    colornumber = dv.attributes['coul'].value 
-                    if colornumber != "1":
+                if departement == deprequest  or  departement == deprequest + "10":
+                    vigiColor = dv.attributes['coul'].value 
+                    if vigiColor != "1":
+                        if int(vigiColor) > int(vigiColors[0]):  vigiColors[0] = vigiColor
                         for risk in dv.getElementsByTagName('risque'):
-                            risks = risks + risklong[int(risk.attributes['val'].value)] + ","
-                            
-                if departement == deprequest + "10":                                # For departement with "Submersion wave" risk.
-                    print ("##### departement '%s' in subdeplist" % departement)
-                    colornumber10 = dv.attributes['coul'].value
-                    if colornumber10 != "1":
-                        for risk in dv.getElementsByTagName('risque'):
-                            risks = risks + risklong[int(risk.attributes['val'].value)] + ","
-                            print ("##### risks departement '%s': " % risks)
-              
-            if int(colornumber10) > int(colornumber):        # Ex.: <DV dep="33" coul="1"/><DV dep="3310" coul="2"><risque val="9"/></DV>
-                colornumber = colornumber10
-                
-            if risks:
-                risks = risks[0:-1]                         # Delete last ','
-                return vigiInfo, colorlist[int(colornumber)], risks
+                            riskValue = int(risk.attributes['val'].value)
+                            vigiColors[riskValue] = vigiColor
+                            vigiRisks[int(vigiColor)] = vigiRisks[int(vigiColor)] + risklong[riskValue] + ","
+                            self.log.debug(u"==> Vigilance for '%s' = '%s' with risk '%s'" % (departement, vigiColor, risklong[riskValue]))
+                 
+            if vigiColor:
+                risks = vigiRisks[int(vigiColors[0])]   # Seul le risque de la couleur max sera affiché
+                risks = risks[0:-1]                     # Delete last ','
+                for idx, item in enumerate(vigiColors):
+                    vigiColors[idx] = colorlist[int(item)]
+                return vigiInfo, vigiColors, risks
             else:
-                if colornumber:
-                    return vigiInfo, colorlist[1], "No vigilance"
-                else:
-                    return vigiInfo, colorlist[0], "Unknow departement"
+                return "", vigiColors, "Unknow departement"
 
 

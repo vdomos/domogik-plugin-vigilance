@@ -100,13 +100,24 @@ class VigilanceManager(Plugin):
 
 
 
-    def send_data(self, device_id, vigilanceColor, vigilanceRisk, vigilanceInfo):
+    def send_data(self, device_id, dep, vigilanceColors, vigilanceRisk, vigilanceInfo):
         """ Send the vigilance sensors values over MQ
         """
         data = {}
-        data[self.sensors[device_id]["vigilanceColor"]] = vigilanceColor            #  "vigilanceColor" = sensor name in info.json file
-        data[self.sensors[device_id]["vigilanceRisk"]] = vigilanceRisk              #  "vigilanceRisk" = sensor name in info.json file
-        data[self.sensors[device_id]["vigilanceInfo"]] = vigilanceInfo              #  "vigilanceInfo" = sensor name in info.json file
+        data[self.sensors[device_id]["vigilanceDep"]] = dep
+        data[self.sensors[device_id]["vigilanceColor"]] = vigilanceColors[0] 
+        data[self.sensors[device_id]["vigilanceColorWind"]] = vigilanceColors[1]  
+        data[self.sensors[device_id]["vigilanceColorRain"]] = vigilanceColors[2]   
+        data[self.sensors[device_id]["vigilanceColorThunderstorms"]] = vigilanceColors[3]   
+        data[self.sensors[device_id]["vigilanceColorFlood"]] = vigilanceColors[4]  
+        data[self.sensors[device_id]["vigilanceColorSnow"]] = vigilanceColors[5]  
+        data[self.sensors[device_id]["vigilanceColorHeat"]] = vigilanceColors[6]   
+        data[self.sensors[device_id]["vigilanceColorCold"]] = vigilanceColors[7]   
+        data[self.sensors[device_id]["vigilanceColorAvalanches"]] = vigilanceColors[8]   
+        data[self.sensors[device_id]["vigilanceColorSubmersion"]] = vigilanceColors[9]  
+        
+        data[self.sensors[device_id]["vigilanceRisk"]] = vigilanceRisk
+        data[self.sensors[device_id]["vigilanceInfo"]] = vigilanceInfo 
         
         self.log.info("==> 0MQ PUB sended = %s" % format(data))
 

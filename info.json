@@ -21,7 +21,17 @@
             "id": "vigilance",
             "name": "Vigilance",
             "commands": [],
-            "sensors": ["vigilanceColor",
+            "sensors": ["vigilanceDep",
+                        "vigilanceColor",
+                        "vigilanceColorWind", 
+                        "vigilanceColorRain", 
+                        "vigilanceColorThunderstorms", 
+                        "vigilanceColorFlood", 
+                        "vigilanceColorSnow", 
+                        "vigilanceColorHeat", 
+                        "vigilanceColorCold", 
+                        "vigilanceColorAvalanches", 
+                        "vigilanceColorSubmersion",
                         "vigilanceRisk",
                         "vigilanceInfo"
                         ],
@@ -37,6 +47,21 @@
     },
     
     "sensors": {
+        "vigilanceDep": {
+            "name": "Vigilance Departement",
+            "data_type": "DT_String",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        
         "vigilanceColor": {
             "name": "Vigilance color",
             "data_type": "DT_ColorRGBHexa",
@@ -51,6 +76,134 @@
                 "round_value": 0
             }
         },
+        
+         "vigilanceColorWind": {
+            "name": "Vigilance color Wind",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorRain": {
+            "name": "Vigilance color Rain",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorThunderstorms": {
+            "name": "Vigilance color",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorFlood": {
+            "name": "Vigilance color Flood",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorSnow": {
+            "name": "Vigilance color Snow",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorHeat": {
+            "name": "Vigilance color Heat",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorCold": {
+            "name": "Vigilance color Cold",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorAvalanches": {
+            "name": "Vigilance color Avalanches",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "vigilanceColorSubmersion": {
+            "name": "Vigilance color Submersion",
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+       
         "vigilanceRisk": {
             "name": "Vigilance Risk",
             "data_type": "DT_String",
@@ -65,6 +218,7 @@
                 "round_value": 0
             }
         },
+        
         "vigilanceInfo": {
             "name": "Vigilance Info",
             "data_type": "DT_String",
