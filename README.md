@@ -5,7 +5,7 @@ Domogik Plugin for 'Meteo France' Vigilance Alert
 ![Domowew_VigilanceWidget_5.png](docs/Domowew_VigilanceWidget_5.png)
 
 
-**ATTENTION**: Work in progress
+Work in progress ...
 
 
 ## Purpose
