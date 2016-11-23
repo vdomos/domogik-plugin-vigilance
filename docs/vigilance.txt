@@ -120,7 +120,7 @@ There is a spécifique widget:
 Here some snapshots of the widget in different case:
 
 
-Widget appearance if no configure or without information for the departement configured:
+Widget appearance if **not configured** or **without information** for the departement configured:
 
 .. image:: Domoweb_VigilanceWidget_NoInfo.png
 
@@ -142,7 +142,7 @@ Widget appearance for **orange** vigilance:
 
 Widget appearance for **red** vigilance:
 
-    Will be updated at the next red vigilance
+    *Will be updated at the next red vigilance*
 
 
 
