@@ -117,7 +117,7 @@ For Domoweb
 
 There is a spécifique widget:
 
-Here some snapshot of the widget in different case:
+Here some snapshots of the widget in different case:
 
 
 Widget appearance if no configure or without information for the departement configured:

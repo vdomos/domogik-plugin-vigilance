@@ -6,10 +6,10 @@ Development informations
 
 Meteo France vigilance information is available as an xml file.
 At first, I use the GuiguiAbloc'code (http://api.domogeek.fr) and I thank him for it.
-Its code uses the xml file: **NXFR34_LFPW_.xml**
+His code uses the xml file: **NXFR34_LFPW_.xml**
 
 When I search for additional information about meteo France vigilance, 
-I come across another xml (**NXFR33_LFPW_.xml**) file that seems more complete for the yellow vigilance.
+I come across another xml file (**NXFR33_LFPW_.xml**) that seems more complete for the yellow vigilance.
 
 
 This xml file is available here 'http://vigilance.meteofrance.com/data/NXFR33_LFPW_.xml' and its contents are of this form: ::
@@ -81,7 +81,7 @@ For orange/red vigilance, It is possible to obtain additional information for th
 
 This should be added in an upcoming update
 
-XML file per departement's number for orange/red alert only:
+XML file by departement's number for orange/red alert only: ::
 
     WXBD09_LFPW_.xml
     WXBD12_LFPW_.xml
