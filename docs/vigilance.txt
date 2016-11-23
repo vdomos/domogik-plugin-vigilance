@@ -88,6 +88,8 @@ Some exceptions for this departements:
 * Use "2A" for "Corse du Sud"
 * Use "2B" for "Haute Corse"
 
+The vigilance sensors are updated every 15mn
+
 
 Start the plugin
 ================

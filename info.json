@@ -76,6 +76,36 @@
                 "round_value": 0
             }
         },
+       
+        "vigilanceRisk": {
+            "name": "Vigilance Risk",
+            "data_type": "DT_String",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": false,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        
+        "vigilanceInfo": {
+            "name": "Vigilance Info",
+            "data_type": "DT_String",
+            "conversion": "",
+            "incremental": false,
+            "timeout": 900,
+            "history": {
+                "store": true,
+                "duplicate": false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
         
          "vigilanceColorWind": {
             "name": "Vigilance color Wind",
@@ -106,7 +136,7 @@
             }
         },
         "vigilanceColorThunderstorms": {
-            "name": "Vigilance color",
+            "name": "Vigilance color Thunderstorms",
             "data_type": "DT_ColorRGBHexa",
             "conversion": "",
             "incremental": false,
@@ -197,36 +227,6 @@
             "timeout": 900,
             "history": {
                 "store": false,
-                "duplicate": false,
-                "max": 0,
-                "expire": 0,
-                "round_value": 0
-            }
-        },
-       
-        "vigilanceRisk": {
-            "name": "Vigilance Risk",
-            "data_type": "DT_String",
-            "conversion": "",
-            "incremental": false,
-            "timeout": 900,
-            "history": {
-                "store": false,
-                "duplicate": false,
-                "max": 0,
-                "expire": 0,
-                "round_value": 0
-            }
-        },
-        
-        "vigilanceInfo": {
-            "name": "Vigilance Info",
-            "data_type": "DT_String",
-            "conversion": "",
-            "incremental": false,
-            "timeout": 900,
-            "history": {
-                "store": true,
                 "duplicate": false,
                 "max": 0,
                 "expire": 0,
