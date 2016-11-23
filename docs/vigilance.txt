@@ -7,28 +7,86 @@ Plugin vigilance
 Purpose
 =======
 
+The plugin allows you to display Weather Alert (Vigilance) from "Meteo France"
+This service is available online here (Service only available for France's Departements):
+
+http://vigilance.meteofrance.com/
+
+.. image:: vigilance.meteofrance.png
+
+
+The Weather Vigilance is designed to inform the population and the public authorities in case of dangerous meteorological phenomena in metropolitan France. 
+It aims to draw the attention of all to the potential dangers of a meteorological situation and to communicate the precautions to protect themselves.
+
+Four colors for four levels of alertness
+Each department is colored in green, yellow, orange or red, 
+depending on the meteorological situation and the level of vigilance required. 
+In case of wake-submersion vigilance, the littoral of the coastal departments concerned is also colored. 
+If a noticeable change occurs, the card can be updated at any time.
+
+In the case of a dangerous phenomenon of high intensity, the zone concerned appears in orange. 
+In case of very dangerous phenomenon of exceptional intensity, the zone concerned appears this time in red.
+
+Signification of each color:
+
+* **Vert**: Pas de vigilance particulière  (Green: No particular vigilance)
+* **Jaune**: Soyez attentifs  (Yellow: Be careful)
+* **Orange**: Soyez très vigilant  (Orange: Be very vigilant)
+* **Rouge**: Une vigilance absolue s'impose  (Red: Absolute vigilance is essential)
+
+For color Yellow, Orange, Red there is 9 alert types: 
+
+* **Vent**  (Wind) 
+* **Pluie**  (Rain) 
+* **Orages** (Thunderstorms) 
+* **Inondation** (Flood) 
+* **Neige/verglas** (Snow/ice) 
+* **Canicule** (Heat wave) 
+* **Grand froid** (Intense cold) 
+* **Avalanches** (Avalanches) 
+* **Vague submersion** (Submersion wave) 
+
+
+In the plugin, to be be identical to Meteo France Color, the foor color green, yellow, orange or red are recorded with this value:    
+
+* **grey**: "E0E0D1" 
+* **green**: "28D661"
+* **yellow**: "FFFF00"
+* **orange**: "FFC400"
+* **red**: "FF0000"
+
+
 Dependencies
 ============
+
+No dependencies needed
 
 Plugin configuration
 ====================
 
+No configuration needed for the plugin
+   
 Create the devices
 ==================
 
 Device parameters configuration
 -------------------------------
 
-X parameters are needed for a domogik device creation ...
+One parameter is needed for a domogik device creation ...
 
 
 ===================== =========================== ======================================================================
 Key                   Type                        Description
 ===================== =========================== ======================================================================
-key1                  datatype                    ...
---------------------- --------------------------- ----------------------------------------------------------------------
-key2                  datatype                    ...
+departement           DT_String                   The french 'Département' number"
 ===================== =========================== ======================================================================
+
+Some exceptions for this departements:
+
+* Use "75" for 75, 92, 93, 94 departement
+* Use "99" for Andorre
+* Use "2A" for "Corse du Sud"
+* Use "2B" for "Haute Corse"
 
 
 Start the plugin
@@ -36,7 +94,71 @@ Start the plugin
 
 You can now start the plugin (start button) and use the created devices.
 
+
+Use vigilance information in scenario
+-------------------------------------
+
+With scenario, you can send alert when vigilance becomes orange or red.
+
+Here is a simple exemple of senario: 
+
+.. image:: Domogik_Vigilance_Scenario_1.png
+
+
+
 Set up your widgets on the user interface
 =========================================
 
 You can now place the widgets of your devices features on the user interface.
+
+
+For Domoweb
+-----------
+
+There is a spécifique widget:
+
+Here some snapshot of the widget in different case:
+
+
+Widget appearance if no configure or without information for the departement configured:
+
+.. image:: Domoweb_VigilanceWidget_NoInfo.png
+
+
+Widget appearance for **no vigilance**:
+
+.. image:: Domoweb_VigilanceWidget_Vert.png
+
+
+Widget appearance for **yellow** vigilance:
+
+.. image:: Domoweb_VigilanceWidget_Jaune.png
+
+
+Widget appearance for **orange** vigilance:
+
+.. image:: Domoweb_VigilanceWidget_Orange.png
+
+
+Widget appearance for **red** vigilance:
+
+    Will be updated at the next red vigilance
+
+
+
+Some détail for the "risk" icon if you click/tap on it:
+
+.. image:: Domoweb_VigilanceWidget_RiskTooltip.png
+
+
+Additional information if you click/tap on "France" Logo
+ 
+.. image:: Domoweb_VigilanceWidget_Info.png
+
+For now, there is only the source "Meteo France" et the last update date.
+
+A next update will have to add a given bulletin during the orange and red vigilances
+
+
+
+

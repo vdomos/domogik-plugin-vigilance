@@ -61,12 +61,9 @@ class VigilanceManager(Plugin):
 
         # get the devices list
         self.devices = self.get_device_list(quit_if_no_device = True)
-        #self.log.info(u"==> device:   %s" % format(self.devices))
 
         # get the sensors id per device : 
-        # {device_id1 : {"sensor_name1" : sensor_id1, "sensor_name2" : sensor_id2},  device_id2 : {"sensor_name1" : sensor_id1, "sensor_name2" : sensor_id2}}
         self.sensors = self.get_sensors(self.devices)
-        #self.log.info(u"==> sensors:   %s" % format(self.sensors))        # INFO ==> sensors:   {66: {u'vigilance': 159}}  ('device id': 'sensor name': 'sensor id')
 
         # create a Vigilance thread for each device
         vigilancethreads = {}
@@ -90,11 +87,7 @@ class VigilanceManager(Plugin):
                 self.register_thread(vigilancethreads[thr_name])
 
             except:
-                self.log.error(u"{0}".format(traceback.format_exc()))
-                # we don't quit plugin if an error occured
-                # a vigilance device can be KO and the others be ok
-                #self.force_leave()
-                #return
+                self.log.error(u"{0}".format(traceback.format_exc()))   # we don't quit plugin if an error occured, a vigilance device can be KO and the others be ok
 
         self.ready()
 
