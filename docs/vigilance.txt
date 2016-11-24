@@ -144,7 +144,8 @@ Widget appearance for **orange** vigilance:
 
 Widget appearance for **red** vigilance:
 
-    *Will be updated at the next red vigilance*
+.. image:: Domoweb_VigilanceWidget_Rouge.png
+
 
 
 
