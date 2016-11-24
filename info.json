@@ -23,6 +23,8 @@
             "commands": [],
             "sensors": ["vigilanceDep",
                         "vigilanceColor",
+                        "vigilanceRisk",
+                        "vigilanceInfo",
                         "vigilanceColorWind", 
                         "vigilanceColorRain", 
                         "vigilanceColorThunderstorms", 
@@ -31,9 +33,7 @@
                         "vigilanceColorHeat", 
                         "vigilanceColorCold", 
                         "vigilanceColorAvalanches", 
-                        "vigilanceColorSubmersion",
-                        "vigilanceRisk",
-                        "vigilanceInfo"
+                        "vigilanceColorSubmersion"
                         ],
             "parameters": [
                 {
