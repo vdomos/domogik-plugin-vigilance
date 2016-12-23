@@ -1,0 +1,208 @@
+.. _index:
+
+========================
+Development informations
+========================
+
+Meteo France vigilance information is available as an xml file.
+At first, I use the GuiguiAbloc'code (http://api.domogeek.fr) and I thank him for it.
+
+His code uses the xml file: **NXFR34_LFPW_.xml**
+
+When I search for additional information about meteo France vigilance, 
+I come across another xml file (**NXFR33_LFPW_.xml**) that seems more complete for the yellow vigilance.
+
+
+This xml file is available here 'http://vigilance.meteofrance.com/data/NXFR33_LFPW_.xml' and its contents are of this form: ::
+
+    <CV>
+    <EV dateinsert="20161123063900" dateprevue="20161124060000" daterun="20161123063800" echeance="23" noversion="2" producteur="DP" typeprev="1" crueint="99,2A,2B,22,74">
+    <VCONSEIL texte="Orages/Orange- Evitez d'utiliser le téléphone et les appareils électriques.- A l'approche d'un orage, mettez en sécurité vos biens et abritez-vous hors des zones boisées.Vent/Orange- Prenez garde aux chutes d'arbres ou d'objets.- N'intervenez pas sur les toitures.- Rangez les objets exposés au vent.- Si vous devez installer un groupe électrogène, placez-le impérativement à l'extérieur des bâtiments.Crues/Orange- Renseignez-vous avant d'entreprendre vos déplacements et soyez très prudents. Respectez, en particulier, les déviations mises en place.- Ne vous engagez en aucun cas, à pied ou en voiture, sur une voie immergée."/><VCOMMENTAIRE texte="Une ligne orageuse active va balayer l'est de Midi-Pyrénées et le Languedoc en soirée et début de nuit de mercredi à jeudi avec de violentes rafales de vent.Crues en cours dans la basse vallée du Rhône et sur la Bourbince."/>
+    </EV>
+    <DV dep="01" coul="1"/>
+    <DV dep="02" coul="1"/>
+    <DV dep="03" coul="2">
+        <risque val="4"/></DV>
+    <DV dep="04" coul="2">
+        <risque val="8"/>
+        <risque val="4"/>
+    </DV><DV dep="05" coul="2">
+        <risque val="8"/>
+        <risque val="4"/>
+    </DV>
+    <DV dep="06" coul="2">
+        <risque val="8"/>
+        <risque val="4"/>
+    </DV>
+    <DV dep="0610" coul="2">
+        <risque val="9"/>
+    </DV>
+    ...
+    <DV dep="11" coul="3">
+        <risque val="3"/>
+        <risque val="1"/>
+    </DV>
+    <DV dep="11" coul="2">
+        <risque val="2"/>
+        <risque val="4"/>
+    </DV>
+    <DV dep="1110" coul="2">
+        <risque val="9"/>
+    </DV>
+    ...
+    <DV dep="2B" coul="4">
+        <risque val="2"/></DV>
+    <DV dep="2B" coul="3">
+        <risque val="1"/>
+        <risque val="3"/>
+    </DV>
+    <DV dep="2B10" coul="2">
+        <risque val="9"/>
+    </DV>
+    ...
+    <DV dep="90" coul="1"/>
+    <DV dep="91" coul="1"/>
+    <DV dep="95" coul="1"/>
+    <DV dep="99" coul="2">
+        <risque val="2"/>
+    </DV>
+    </CV>
+
+The colors are coded from 1 to 4:
+
+* vert: "1"
+* jaune: "2"
+* orange: "3"
+* rouge: "4"
+
+And the risks from 1 to 9:
+
+* "Vent": 1
+* "Pluie": 2
+* "Orages": 3
+* "Inondation": 4
+* "Neige/verglas": 5
+* "Canicule": 6
+* "Grand froid": 7
+* "Avalanches": 8
+* "Vague submersion": 9  (For this case, the departement number is coded with a terminal "10", like this (dep="0610") in the above extract)
+
+
+For orange/red vigilance, It is possible to obtain additional information for the department concerned with tis xml files:
+
+This should be added in an upcoming update
+
+XML file by departement's number for orange/red alert only: ::
+
+    WXBD09_LFPW_.xml
+    WXBD12_LFPW_.xml
+    WXBD16_LFPW_.xml
+    WXBD17_LFPW_.xml
+    WXBD19_LFPW_.xml
+    WXBD23_LFPW_.xml
+    WXBD24_LFPW_.xml
+    WXBD31_LFPW_.xml
+    WXBD32_LFPW_.xml
+    WXBD33_LFPW_.xml
+    WXBD40_LFPW_.xml
+    WXBD46_LFPW_.xml
+    WXBD47_LFPW_.xml
+    WXBD64_LFPW_.xml
+    WXBD65_LFPW_.xml
+    WXBD79_LFPW_.xml
+    WXBD81_LFPW_.xml
+    WXBD82_LFPW_.xml
+    WXBD86_LFPW_.xml
+    WXBD87_LFPW_.xml
+    WXBT09_LFPW_.xml
+    WXBT31_LFPW_.xml
+    WXBT64_LFPW_.xml
+    WXBT65_LFPW_.xml
+    WXBT66_LFPW_.xml
+    WXBT96_LFPW_.xml
+    WXFR31_LFPW_.xml
+    WXLS04_LFPW_.xml
+    WXLS05_LFPW_.xml
+    WXLS06_LFPW_.xml
+    WXLS20_LFPW_.xml
+    WXLS38_LFPW_.xml
+    WXLS73_LFPW_.xml
+    WXLS74_LFPW_.xml
+    WXLS99_LFPW_.xml
+    WXLY01_LFPW_.xml
+    WXLY03_LFPW_.xml
+    WXLY07_LFPW_.xml
+    WXLY15_LFPW_.xml
+    WXLY21_LFPW_.xml
+    WXLY26_LFPW_.xml
+    WXLY38_LFPW_.xml
+    WXLY42_LFPW_.xml
+    WXLY43_LFPW_.xml
+    WXLY58_LFPW_.xml
+    WXLY63_LFPW_.xml
+    WXLY69_LFPW_.xml
+    WXLY71_LFPW_.xml
+    WXLY73_LFPW_.xml
+    WXLY74_LFPW_.xml
+    WXLY89_LFPW_.xml
+    WXML04_LFPW_.xml
+    WXML05_LFPW_.xml
+    WXML06_LFPW_.xml
+    WXML11_LFPW_.xml
+    WXML13_LFPW_.xml
+    WXML20_LFPW_.xml
+    WXML30_LFPW_.xml
+    WXML34_LFPW_.xml
+    WXML48_LFPW_.xml
+    WXML66_LFPW_.xml
+    WXML83_LFPW_.xml
+    WXML84_LFPW_.xml
+    WXML96_LFPW_.xml
+    WXML99_LFPW_.xml
+    WXPB18_LFPW_.xml
+    WXPB28_LFPW_.xml
+    WXPB36_LFPW_.xml
+    WXPB37_LFPW_.xml
+    WXPB41_LFPW_.xml
+    WXPB45_LFPW_.xml
+    WXPB75_LFPW_.xml
+    WXPB77_LFPW_.xml
+    WXPB78_LFPW_.xml
+    WXPB91_LFPW_.xml
+    WXPB95_LFPW_.xml
+    WXQQ02_LFPW_.xml
+    WXQQ08_LFPW_.xml
+    WXQQ10_LFPW_.xml
+    WXQQ27_LFPW_.xml
+    WXQQ51_LFPW_.xml
+    WXQQ52_LFPW_.xml
+    WXQQ59_LFPW_.xml
+    WXQQ60_LFPW_.xml
+    WXQQ62_LFPW_.xml
+    WXQQ76_LFPW_.xml
+    WXQQ80_LFPW_.xml
+    WXRN14_LFPW_.xml
+    WXRN22_LFPW_.xml
+    WXRN29_LFPW_.xml
+    WXRN35_LFPW_.xml
+    WXRN44_LFPW_.xml
+    WXRN49_LFPW_.xml
+    WXRN50_LFPW_.xml
+    WXRN53_LFPW_.xml
+    WXRN56_LFPW_.xml
+    WXRN61_LFPW_.xml
+    WXRN72_LFPW_.xml
+    WXRN85_LFPW_.xml
+    WXST25_LFPW_.xml
+    WXST39_LFPW_.xml
+    WXST54_LFPW_.xml
+    WXST55_LFPW_.xml
+    WXST57_LFPW_.xml
+    WXST67_LFPW_.xml
+    WXST68_LFPW_.xml
+    WXST70_LFPW_.xml
+    WXST88_LFPW_.xml
+    WXST90_LFPW_.xml
+
+    
+
