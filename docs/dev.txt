@@ -50,6 +50,16 @@ This xml file is available here 'http://vigilance.meteofrance.com/data/NXFR33_LF
         <risque val="9"/>
     </DV>
     ...
+    <DV dep="2B" coul="4">
+        <risque val="2"/></DV>
+    <DV dep="2B" coul="3">
+        <risque val="1"/>
+        <risque val="3"/>
+    </DV>
+    <DV dep="2B10" coul="2">
+        <risque val="9"/>
+    </DV>
+    ...
     <DV dep="90" coul="1"/>
     <DV dep="91" coul="1"/>
     <DV dep="95" coul="1"/>
