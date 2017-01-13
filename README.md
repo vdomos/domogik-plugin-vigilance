@@ -4,6 +4,8 @@ Domogik Plugin for 'Meteo France' Vigilance Alert
 
 ![Domoweb_VigilanceWidgets.png](docs/Domoweb_VigilanceWidgets.png)
 
+![Domoweb_VigilanceWidgets2.png](docs/Domoweb_VigilanceWidgets2.png)
+
 
 Work in progress ...
 
