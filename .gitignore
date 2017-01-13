@@ -6,3 +6,4 @@ _build_doc
 *.20*
 *.directory
 docs/tests
+domoweb/

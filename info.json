@@ -10,7 +10,7 @@
         "domogik_min_version": "0.5.0", 
         "name": "vigilance", 
         "type": "plugin", 
-        "version": "1.0"
+        "version": "1.20170112"
     }, 
     
     "configuration": [],
@@ -64,7 +64,7 @@
         
         "vigilanceColor": {
             "name": "Vigilance color",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -109,7 +109,7 @@
         
          "vigilanceColorWind": {
             "name": "Vigilance color Wind",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -123,7 +123,7 @@
         },
         "vigilanceColorRain": {
             "name": "Vigilance color Rain",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -137,7 +137,7 @@
         },
         "vigilanceColorThunderstorms": {
             "name": "Vigilance color Thunderstorms",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -151,7 +151,7 @@
         },
         "vigilanceColorFlood": {
             "name": "Vigilance color Flood",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -165,7 +165,7 @@
         },
         "vigilanceColorSnow": {
             "name": "Vigilance color Snow",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -179,7 +179,7 @@
         },
         "vigilanceColorHeat": {
             "name": "Vigilance color Heat",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -193,7 +193,7 @@
         },
         "vigilanceColorCold": {
             "name": "Vigilance color Cold",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -207,7 +207,7 @@
         },
         "vigilanceColorAvalanches": {
             "name": "Vigilance color Avalanches",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,
@@ -221,7 +221,7 @@
         },
         "vigilanceColorSubmersion": {
             "name": "Vigilance color Submersion",
-            "data_type": "DT_ColorRGBHexa",
+            "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
             "timeout": 900,

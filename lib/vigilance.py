@@ -97,7 +97,7 @@ class Vigilance:
         '''
         url = 'http://vigilance.meteofrance.com/data/NXFR33_LFPW_.xml'      # 'http://vigilance.meteofrance.com/data/NXFR34_LFPW_.xml'
         risklong = ["", "Wind", "Rain", "Thunderstorms", "Flood", "Snow/ice", "Heat wave", "Intense cold", "Avalanches", "Submersion wave"]
-        colorlist = ["E0E0D1", "28D661", "FFFF00", "FFC400", "FF0000"]      # ["grey", "green", "yellow", "orange", "red"]
+        colorlist = ["W", "G", "Y", "O", "R"]                               # ["white", "green", "yellow", "orange", "red"]
 
         if deprequest == "92" or deprequest == "93" or deprequest == "94": deprequest = "75"
         if deprequest == "20": deprequest = "2A"
@@ -142,6 +142,6 @@ class Vigilance:
                     vigiColors[idx] = colorlist[int(item)]
                 return vigiInfo, vigiColors, risks
             else:
-                return "", ["E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1", "E0E0D1"], "Unknow departement"
+                return "", ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W"], "Unknow departement"
 
 
