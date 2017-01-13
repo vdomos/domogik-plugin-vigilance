@@ -47,13 +47,13 @@ For color Yellow, Orange, Red there is 9 alert types:
 * **Vague submersion** (Submersion wave) 
 
 
-In the plugin, to be be identical to Meteo France Color, the foor color green, yellow, orange or red are recorded with this value:    
+In the plugin, the foor color green, yellow, orange or red are recorded with this value:    
 
-* **grey**: "E0E0D1" 
-* **green**: "28D661"
-* **yellow**: "FFFF00"
-* **orange**: "FFC400"
-* **red**: "FF0000"
+* **grey**: "W" 
+* **green**: "G"
+* **yellow**: "Y"
+* **orange**: "O"
+* **red**: "R"
 
 
 Dependencies
