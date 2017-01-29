@@ -52,7 +52,7 @@
             "data_type": "DT_String",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -67,7 +67,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -82,7 +82,7 @@
             "data_type": "DT_String",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -97,7 +97,7 @@
             "data_type": "DT_String",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": true,
                 "duplicate": false,
@@ -112,7 +112,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -126,7 +126,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -140,7 +140,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -154,7 +154,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -168,7 +168,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -182,7 +182,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -196,7 +196,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -210,7 +210,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
@@ -224,7 +224,7 @@
             "data_type": "DT_ColorCII",
             "conversion": "",
             "incremental": false,
-            "timeout": 900,
+            "timeout": 960,
             "history": {
                 "store": false,
                 "duplicate": false,
