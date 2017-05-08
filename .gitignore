@@ -7,3 +7,4 @@ _build_doc
 *.directory
 docs/tests
 domoweb/
+local/
