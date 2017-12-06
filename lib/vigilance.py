@@ -82,7 +82,7 @@ class Vigilance:
             self.log.debug(u"==> Get weather vigilance for '%s' 'departement'" % (self.dep))
             info, colors, risk = self.getvigilance(self.dep)
             
-            if colors != "error":
+            if info != "error":
                 self.log.info(u"==> Vigilance for 'departement' '%s' : '%s' (risk = '%s')" % (self.dep, colors, risk))
                 self._send(self.device_id, self.dep, colors, risk, info)
             else:
@@ -107,13 +107,13 @@ class Vigilance:
             dom = minidom.parse(xmldata)
         except HTTPError, err:
             self.log.error(u"API GET '%s', HTTPError code: %d" % (url, err.code))
-            return "error", "", ""
+            return "error", [], ""
         except URLError, err:
             self.log.error(u"API GET '%s', URLError reason: %s" % (url, err.reason))
-            return "error", "", ""
+            return "error", [], ""
         except:
             self.log.error(u"API GET '%s', Unknown error: '%s'" % (url, (traceback.format_exc())))
-            return "error", "", ""
+            return "error", [], ""
         else:
             vigiColor = ""
             vigiColors = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]     # Contains color for each risk, vigiColors[0]  = global departement color), vigiColors[1] = "2" ==> "Wind Vigilance" = "Yellow color"
